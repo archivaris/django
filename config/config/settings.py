@@ -43,7 +43,17 @@ INSTALLED_APPS = [
     'instructors',
     'secretaries',
     'admins',
+
+    # apps
+    'crispy_forms',
+    'rolepermissions',
 ]
+
+# for permission management
+# ROLEPERMISSIONS_MODULE = 'admin_tools.roles'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

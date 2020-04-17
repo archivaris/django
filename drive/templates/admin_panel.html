@@ -22,7 +22,7 @@
                         {{ form.id }}
                         <tr>
                             <td class="text-center" style="max-width: 40px">{{ form.active }}</td>
-                            <td>{{ form.emri }}</td>
+                            <td>{{ form.name }}</td>
                             <td class="text-center">{% if form.id.value %}<small><a class="text-danger"
                                                                                     href="{% url 'delete_payment' pk=form.id.value %}">Delete</a></small>
                                 {% endif %}
@@ -35,7 +35,7 @@
                     <p class="lead">No payments</p>
                     {% endif %}
                     <br>
-                    <a class="float-right btn btn-primary" href="{% url 'administrator' afat_extra=extra|add:1 %}">+</a>
+                    <a class="float-right btn btn-primary" href="{% url 'administrator' extra_time=extra|add:1 %}">+</a>
                     <input class="float-left btn btn-primary" type="submit" value="Save Changes">
                 </form>
             </div>

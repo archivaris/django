@@ -10,25 +10,6 @@ STATUS = (
     (2, 'Refused'),
 )
 
-DAYS = (
-    [(i, i) for i in range(1, 31)]
-)
-
-MONTHS = (
-    (1, 'Jan'),
-    (2, 'Feb'),
-    (3, 'Mar'),
-    (4, 'Apr'),
-    (5, 'May'),
-    (6, 'Jun'),
-    (7, 'Jul'),
-    (8, 'Aug'),
-    (9, 'Sep'),
-    (10, 'Oct'),
-    (11, 'Nov'),
-    (12, 'Dec'),
-)
-
 TYPES = (
     ('o', 'Mandatory'),
     ('z', 'Optional'),
@@ -78,7 +59,7 @@ class Student(models.Model):
     country = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
     city = models.CharField(max_length=100, null=True)
     course = models.ManyToManyField(Course, related_name='course', blank=True)
-    course_instructor = models.ManyToManyField(Course, related_name='course_teacher', blank=True)
+    course_instructor = models.ManyToManyField(Course, related_name='course_instructor', blank=True)
 
     def __str__(self):
         if self.first_name and not self.last_name:

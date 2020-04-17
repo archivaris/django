@@ -18,14 +18,13 @@ urlpatterns = [
     path('permits/course/<int:pk>', views.course_detail, name='course_detail'),
     path('permit/<int:pk>', views.permit_detail, name='permit_single'),
     path('course/<int:course_id>/instructor/edit/', views.select_instructor, name='add_instructor'),
-    path('course/<int:course_id>/instructor/confirm/<int:student_id>', views.confirm_select_instructor,
-         name='confirm_instructor'),
+    path('course/<int:course_id>/instructor/confirm/<int:student_id>', views.confirm_select_instructor, name='confirm_instructor'),
     path('course/<int:course_id>/instructor/delete/<int:student_id>', views.confirm_delete_instructor, name='delete_instructor'),
     path('ajax/filter_course/', views.filter_courses_view, name='filter_views'),
     re_path(r'^$', views.home_view, name='home'),
     path('payment/all/', views.payment_deadlines, name='payment'),
-    path('payment/current/', views.current_payments, name='current_payments'),
-    path('administrator/<int:afat_extra>', views.admin_view, name='administrator'),
+    path('payment/current/', views.done_payments, name='current_payments'),
+    path('administrator/<int:extra_time>', views.admin_view, name='administrator'),
     path('deadline/delete/<int:pk>', views.delete_payment, name='delete_payment'),
 
 ]

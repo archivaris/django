@@ -34,7 +34,7 @@
                         <td style="max-width: 50px"><b>{{ p.course.get_type }}</b></td>
                         <td>{{ p.course.name }}</td>
                         <td>
-                            {% for t in p.course.course_teacher.all %}
+                            {% for t in p.course.course_instructor.all %}
                             {{ t }}<br>
                             {% endfor %}
                         </td>

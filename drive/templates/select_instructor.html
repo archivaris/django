@@ -53,7 +53,7 @@
         <div class="col-md-5 col-xs-12">
             <div class="card-box">
                 <h6>Currently selected</h6><br/>
-                {% if teachers %}
+                {% if instructors %}
                 <table>
                     <tbody>
                     {% for instructor in instructors %}
@@ -64,7 +64,7 @@
                         <td class="text-right">
                                 <span class="with-popup">
                                     <div class="popup p-delete">
-                                        <p>Are you sure you want to remove this teacher?</p>
+                                        <p>Are you sure you want to remove this instructor?</p>
                                         <a href="{% url 'delete_instructor' course_id=course_id student_id=instructor.pk %}">Remove</a>
                                     </div><small><a class="btn btn-sm btn-danger">Remove</a></small>
                                 </span>

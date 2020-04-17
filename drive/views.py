@@ -1,16 +1,13 @@
 from datetime import datetime
 from django.shortcuts import render
-from django.http import HttpRequest, JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import redirect
-from .models import Course, Permit, User, Student, Grade, payment_deadlines, Payment
-from django.contrib.auth.models import User, Group
-from config import settings
-from django.db.models import Sum, Avg, Max, Min, Count
-from .forms import UpdateProfile, SelectInstructorsForm, GradeStudentsForm, CourseAddForm, PermitForm, DeadlinesForm
+from .models import Course, Permit, Student, Grade, payment_deadlines, Payment
+from django.contrib.auth.models import User
+from django.db.models import Avg, Max, Min, Count
+from .forms import UpdateProfile, CourseAddForm, PermitForm, DeadlinesForm
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import get_object_or_404
-from django.forms import inlineformset_factory
-from django.forms import modelformset_factory
 from django.core.paginator import Paginator
 from django import forms
 from django.template.defaulttags import register
@@ -161,9 +158,9 @@ def student_detail(request, pk):
 
 def course_detail(request, pk):
     course = Course.objects.get(pk=pk)
-    users = User.objects.filter(student__course_teacher__in=[course])
+    users = User.objects.filter(student__course_instructor__in=[course])
     grades = Grade.objects.filter(student_id=request.user.id, course_id=pk)
-    instructors = Student.objects.filter(course_teacher__in=[course])
+    instructors = Student.objects.filter(course_instructor__in=[course])
 
     if request.user.is_authenticated:
         return render(
@@ -180,8 +177,8 @@ def update_instructor(pk_t1):
         course = Course.objects.latest('pk')
         t1 = User.objects.get(pk=pk_t1)
 
-        if not User.objects.filter(student__course_teacher__in=[course], pk=pk_t1).exists():
-            t1.student.course_teacher.add(course)
+        if not User.objects.filter(student__course_instructor__in=[course], pk=pk_t1).exists():
+            t1.student.course_instructor.add(course)
 
 
 def course_add(request, pk):
@@ -309,13 +306,13 @@ def user_edit(request, pk):
 
 def select_instructor(request, course_id):
     students = Student.objects.all()
-    curr_instructor = Student.objects.filter(course_teacher__in=[Course.objects.get(pk=course_id)])
+    curr_instructor = Student.objects.filter(course_instructor__in=[Course.objects.get(pk=course_id)])
 
     if request.method == 'GET':
         first_name = request.GET.get('first_name', '')
         last_name = request.GET.get('last_name', '')
         students = Student.objects.filter(first_name__contains=first_name, last_name__contains=last_name).exclude(
-            course_teacher__in=[Course.objects.get(pk=course_id)])
+            course_instructor__in=[Course.objects.get(pk=course_id)])
 
     paginator = Paginator(students, 15)
 
@@ -332,7 +329,7 @@ def confirm_select_instructor(request, course_id, student_id):
     student = Student.objects.get(pk=student_id)
     course = Course.objects.get(pk=course_id)
 
-    student.course_teacher.add(course)
+    student.course_instructor.add(course)
     student.save()
 
     return redirect('add_instructor', course_id=course_id)
@@ -342,7 +339,7 @@ def confirm_delete_instructor(request, course_id, student_id):
     student = Student.objects.get(pk=student_id)
     course = Course.objects.get(pk=course_id)
 
-    student.course_teacher.remove(course)
+    student.course_instructor.remove(course)
     student.save()
 
     return redirect('add_instructor', course_id=course_id)

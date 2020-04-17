@@ -379,7 +379,7 @@ def admin_view(request, extra_time):
             for instance in formset.forms:
                 if instance.cleaned_data.get('name'):
                     instance.save()
-            return redirect('administrator', afat_extra=0)
+            return redirect('administrator', extra_time=0)
         else:
             print(formset.errors)
     else:

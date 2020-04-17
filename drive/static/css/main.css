@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-    background-color: #232632;
+    background-color: #3d0707;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
     height: 100vh;
@@ -49,7 +49,7 @@ nav a:hover:not(.active) {
 
 a.active {
     color: rgba(255, 255, 255, .8);
-    background-color: #2A2D3E;
+    background-color: #660202;
 }
 
 .dd::before, .minus::before {

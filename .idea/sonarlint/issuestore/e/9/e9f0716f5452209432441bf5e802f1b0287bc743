@@ -1,0 +1,12 @@
+
+HWeb:BoldAndItalicTagsCheck2"Replace this <i> tag by <em>.(ŒáàÖıÿÿÿÿ
+GWeb:ImgWithoutAltCheck+"%Add an "alt" attribute to this image.(³·æ‰
+l Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ßı´ÿÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(§øÒ½øÿÿÿÿ
+CWeb:BoldAndItalicTagsCheckD"Replace this <i> tag by <em>.(ÏÚ¾®
+CWeb:BoldAndItalicTagsCheckM"Replace this <i> tag by <em>.(öãÈü
+HWeb:BoldAndItalicTagsCheck@"Replace this <i> tag by <em>.(¤ığ‡üÿÿÿÿ
+MWeb:TableWithoutCaptionCheck
+" Add a description to this table.(¿‰˜ÿÿÿÿÿ
+LWeb:BoldAndItalicTagsCheckY"!Replace this <b> tag by <strong>.(Ç†“Œúÿÿÿÿ
+HWeb:BoldAndItalicTagsCheck	"Replace this <i> tag by <em>.(êÒƒŞıÿÿÿÿ

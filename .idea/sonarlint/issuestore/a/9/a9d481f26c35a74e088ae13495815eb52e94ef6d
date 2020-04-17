@@ -1,0 +1,15 @@
+
+CWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(‰Ë¡€
+MWeb:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck ";Add either an 'id' or a 'scope' attribute to this <th> tag.(šÌ„¾
+l Web:TableHeaderHasIdOrScopeCheck!";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ûéú»ÿÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck"";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÚØñÿ
+g Web:TableHeaderHasIdOrScopeCheck#";Add either an 'id' or a 'scope' attribute to this <th> tag.(ßÉ¼
+g Web:TableHeaderHasIdOrScopeCheck$";Add either an 'id' or a 'scope' attribute to this <th> tag.(ë¼¶Ç
+l Web:TableHeaderHasIdOrScopeCheck%";Add either an 'id' or a 'scope' attribute to this <th> tag.(¼³ú€ûÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck'";Add either an 'id' or a 'scope' attribute to this <th> tag.(É“š¼
+GWeb:ImgWithoutAltCheck."%Add an "alt" attribute to this image.(ÀÑØâ
+HWeb:BoldAndItalicTagsCheck5"Replace this <i> tag by <em>.(¡À±ıúÿÿÿÿ
+CWeb:BoldAndItalicTagsCheck;"Replace this <i> tag by <em>.(¥ÊÛí
+HWeb:BoldAndItalicTagsCheckC"Replace this <i> tag by <em>.(˜×•©ùÿÿÿÿ
+NWeb:AvoidCommentedOutCodeCheckK"Remove this commented out code.(´„ªÎşÿÿÿÿ

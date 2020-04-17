@@ -61,14 +61,14 @@ $("#update_teacher_btn").click(function() {
 });
 
 
-$("#filterProvimet").change(function() {
+$("#filterPayment").change(function() {
 
     var content = $("#provimetTable");
 
     $.ajax({
         url: '/ajax/filter/provimet/',
         type: 'get',
-        data: { 'afati': $("#filterProvimet").val(), },
+        data: { 'deadline': $("#filterPayment").val(), },
         dataType: 'json',
         success: function(data) {
             content.html(data);

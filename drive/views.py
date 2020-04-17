@@ -425,7 +425,8 @@ def current_payments(request):
 def done_payments(request):
     deadlineAll = payment_deadlines.objects.all()
     permit = request.user.student.permit
-    payment = None;
+    payment = None
+
 
     if request.method == 'GET':
         if request.GET.get('filterPayment'):

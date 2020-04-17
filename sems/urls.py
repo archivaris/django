@@ -31,6 +31,7 @@ urlpatterns = [
 
     re_path(r'^$', views.home_view, name='home'),
 
+    path('provimet/paraqit/', views.paraqit_provimet, name='provimet'),
     path('provimet/paraqitura/', views.provimet_paraqitura, name='provimet_paraqitura'),
 
     path('administrator/<int:afat_extra>', views.admin_view, name='administrator'),

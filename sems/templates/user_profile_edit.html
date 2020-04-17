@@ -1,0 +1,65 @@
+{% extends 'base_generic.html' %}
+
+
+{% block javascript %}
+{% load static %}
+<script src="{% static 'js/ajax.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-box">
+                    <h6>Personal info</h6><br/>
+                    {% csrf_token %}
+                    {{ form.user }}
+                    <div class="form-group">
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-box">
+                    <h6>Location</h6><br/>
+                    <div class="form-group">
+                        {{ form.country }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.city }}
+                    </div>
+                </div>
+                <div class="card-box">
+                    <h6>Driving Licence</h6><br/>
+                    <div class="form-group">
+                        {{ form.program }}
+                    </div>
+                    <div class="form-group position-relative">
+                    </div>
+                </div>
+                {% if user.is_superuser %}
+                <div class="no-shade card-box">
+                    <div class="form-check">
+                        {{ form.is_super }}
+                        <label class="form-check-label" for="id_is_super">
+                            Superuser
+                        </label>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="empty-box">
+                    <button class="btn btn-primary" type="submit">Save</button>
+                    <a class="btn btn-danger" href="{% url 'student_detail' pk=student.pk%}">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

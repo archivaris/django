@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <div class="no-shade card-box">
+                <h4>{{ course }}</h4> {% if course.summary %}
+                <p>{{ course.summary }}</p>
+                {% endif %} {% if teachers %}
+                <h6>Teacher(s)</h6> {% for teacher in teachers %}
+                <a href="{% url 'student_detail' pk=teacher.pk%}">{{ teacher.first_name }} {{ teacher.last_name }}</a>
+                <br/> {% endfor %} {% endif %}
+            </div>
+            {% load static %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,29 +1,25 @@
 {% extends 'base_generic.html' %}
 
-
 {% block content %}
-<form method="post" class="login card-box">
+<form class="login card-box" method="post">
     {% csrf_token %}
 
     {% if user.is_authenticated %}
-        <p class="lead text-center">Already logged in</p>
+    <p class="lead text-center">Already logged in</p>
     {% else %}
-        <h6>LOGIN</h6><br/>
-        <div class="form-group">
-            <label>
-                <!--Username<br/>-->
-                <input type="text" placeholder="Username" class="form-control" name="username" id="username">
-            </label>
-        </div>
-        <div class="form-group">
-            <label>
-                <!--Password<br/>-->
-                <input type="password" placeholder="Password" class="form-control" name="password" id="password">
-            </label>
-        </div>
-        <input style="width: 100%" type="submit" class="btn btn-primary" value="Login"/>
-        <hr/>
-<!--        <a href="{% url 'password_reset' %}">Forgot password?</a>-->
+    <h6>LOGIN</h6><br/>
+    <div class="form-group">
+        <label>
+            <input class="form-control" id="username" name="username" placeholder="Username" type="text">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+        </label>
+    </div>
+    <input class="btn btn-primary" style="width: 100%" type="submit" value="Login"/>
+    <hr/>
     {% endif %}
 </form>
 {% endblock %}

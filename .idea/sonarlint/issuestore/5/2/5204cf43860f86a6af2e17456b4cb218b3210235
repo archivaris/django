@@ -1,10 +1,10 @@
 
-TWeb:TableWithoutCaptionCheck" Add a description to this table.(Ώ‰ÿÿÿÿÿ8Νµν®.
-s Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ΰΎ°ύÿÿÿÿÿ8Νµν®.
+PWeb:AvoidCommentedOutCodeCheck?"Remove this commented out code.(”©Σ±8“°.
+PWeb:AvoidCommentedOutCodeCheck@"Remove this commented out code.(‹ό­½8“°.
 s Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ο–ίσόÿÿÿÿ8Νµν®.
 NWeb:BoldAndItalicTagsCheck""!Replace this <b> tag by <strong>.(ιωγΑ8Νµν®.
 n Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ΞΈ¦φ8Νµν®.
 s Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ών“Δϊÿÿÿÿ8Νµν®.
 PWeb:AvoidCommentedOutCodeCheck>"Remove this commented out code.(³‘ΧΧ8“°.
-PWeb:AvoidCommentedOutCodeCheck?"Remove this commented out code.(”©Σ±8“°.
-PWeb:AvoidCommentedOutCodeCheck@"Remove this commented out code.(‹ό­½8“°.
+TWeb:TableWithoutCaptionCheck" Add a description to this table.(Ώ‰ÿÿÿÿÿ8Νµν®.
+s Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ΰΎ°ύÿÿÿÿÿ8Νµν®.

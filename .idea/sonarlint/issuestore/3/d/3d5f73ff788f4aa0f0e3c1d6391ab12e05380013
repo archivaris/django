@@ -1,14 +1,14 @@
 
-lpython:S1542""ORename function "addOne" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ŠÂÚòûÿÿÿÿ
-Mpython:S1066ê"/Merge this if statement with the enclosing one.(ãßÅãùÿÿÿÿ
-Mpython:S1066ë"/Merge this if statement with the enclosing one.(•ŒŠğùÿÿÿÿ
-fpython:S1542"NRename function "toStr" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(û¥¹ˆ
-rpython:S3776’"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÏåØÓıÿÿÿÿ
-{python:S117°"^Rename this local variable "AfatetFormSet" to match the regular expression ^[_a-z][a-z0-9_]*$.(íøº¢ıÿÿÿÿ
-fpython:S1542"NRename function "toInt" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(æÌš
-~python:S117Ï"ZRename this local variable "afatetAll" to match the regular expression ^[_a-z][a-z0-9_]*$.( •ûêúÿÿÿÿ8­–¹®˜.
-python:S117Ë"]Rename this local variable "provimetList" to match the regular expression ^[_a-z][a-z0-9_]*$.(•µãûÿÿÿÿ8­–¹®˜.
-<python:S125î"Remove this commented out code.(Ï­Éüÿÿÿÿ
 >python:S125"Remove this commented out code.(¸„¤³8·­œ®˜.
-wpython:S117å"ZRename this local variable "afatetAll" to match the regular expression ^[_a-z][a-z0-9_]*$.( •ûêúÿÿÿÿ
 Opython:S1066Ó"/Merge this if statement with the enclosing one.(Ö´°¬8­–¹®˜.
+rpython:S3776’"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÏåØÓıÿÿÿÿ
+python:S117Ë"]Rename this local variable "provimetList" to match the regular expression ^[_a-z][a-z0-9_]*$.(•µãûÿÿÿÿ8­–¹®˜.
+~python:S117Ï"ZRename this local variable "afatetAll" to match the regular expression ^[_a-z][a-z0-9_]*$.( •ûêúÿÿÿÿ8­–¹®˜.
+fpython:S1542"NRename function "toInt" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(æÌš
+{python:S117°"^Rename this local variable "AfatetFormSet" to match the regular expression ^[_a-z][a-z0-9_]*$.(íøº¢ıÿÿÿÿ
+lpython:S1542""ORename function "addOne" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ŠÂÚòûÿÿÿÿ
+Mpython:S1066ë"/Merge this if statement with the enclosing one.(•ŒŠğùÿÿÿÿ
+<python:S125î"Remove this commented out code.(Ï­Éüÿÿÿÿ
+wpython:S117å"ZRename this local variable "afatetAll" to match the regular expression ^[_a-z][a-z0-9_]*$.( •ûêúÿÿÿÿ
+Mpython:S1066ê"/Merge this if statement with the enclosing one.(ãßÅãùÿÿÿÿ
+fpython:S1542"NRename function "toStr" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(û¥¹ˆ

@@ -11,12 +11,12 @@
         <label for="email">
             <input class="form-control" placeholder="Email" value="{{ request.GET.email }}" type="email" name="email" id="email">
         </label>
-        <label for="program">
-            <select class="form-control" name="program" id="program">
+        <label for="permit">
+            <select class="form-control" name="permit" id="permit">
                 <option value="">All</option>
-                {% if programs %}
-                    {% for p in programs %}
-                    <option {% if request.GET.program == p.pk %} selected {% endif %} value="{{ p.pk }}">{{ p }}</option>
+                {% if permits %}
+                    {% for p in permits %}
+                    <option {% if request.GET.permit == p.pk %} selected {% endif %} value="{{ p.pk }}">{{ p }}</option>
                     {% endfor %}
                 {% endif %}
             </select>
@@ -48,7 +48,7 @@
                     <td class="d-none d-sm-table-cell">{{ s.email }}</td>
                     <td class="d-none d-sm-table-cell text-uppercase">{{ s.country }}</td>
                     <td class="d-none d-sm-table-cell text-uppercase">{{ s.city }}</td>
-                    <td><a href="{% url 'program_single' pk=s.program.pk %}">{{ s.program }}</a></td>
+                    <td><a href="{% url 'permit_single' pk=s.permit.pk %}">{{ s.permit }}</a></td>
                     {% if user.is_superuser and user.is_authenticated %}
                     <td style="max-width: 120px"><a href="{% url 'user_edit' pk=s.pk %}"><span class="label sm-label"><i class="fas fa-pencil-alt"></i></span></a>
                     <span class="with-popup">
@@ -72,11 +72,9 @@
         <div class="empty-box">
             <a class="btn btn-primary" href="{% url 'user_add' %}">Add new user</a>
         </div>
-        <!-- <i class="material-icons">person_add</i>&nbsp;  -->
         {% endif %}
 </div>
 {% endblock %}
-
 
 {% block javascript %}
 <script>

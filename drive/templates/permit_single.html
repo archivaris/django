@@ -3,9 +3,9 @@
 {% block content %}
 <div class="container">
     <div class="no-shade card-box">
-        <h4>{{ program.name }}</h4>
-        {% if program.summary %}
-        <p>{{ program.summary }}</p>
+        <h4>{{ permit.name }}</h4>
+        {% if permit.summary %}
+        <p>{{ permit.summary }}</p>
         {% endif %}
     </div>
     <div class="shadow-box">
@@ -31,7 +31,7 @@
                     <span class="with-popup">
                             <div class="popup p-delete">
                                 <p>Are you sure you want to remove this course?</p>
-                                <a href="{% url 'course_delete' p_pk=program.pk pk=course.pk %}">Delete</a>
+                                <a href="{% url 'course_delete' p_pk=permit.pk pk=course.pk %}">Delete</a>
                             </div>
                             <a class="label sm-label" title="Delete"><i class="fas fa-times"></i></a>
                         </span>
@@ -43,7 +43,7 @@
         {% else %}
         <p class="text-center"><i class="material-icons">sentiment_dissatisfied</i><br/>No courses added</p>
         {% if user.is_superuser %}
-        <p class="text-center lead">Start by <a href="{% url 'course_add' pk=program.pk %}">adding new course</a></p>
+        <p class="text-center lead">Start by <a href="{% url 'course_add' pk=permit.pk %}">adding new course</a></p>
         {% endif %}
         {% endif %}
 
@@ -64,9 +64,8 @@
     </div>
     {% if user.is_authenticated and user.is_superuser and courses %}
     <div class="empty-box">
-        <a class="btn btn-primary" href="{% url 'course_add' pk=program.pk %}">Add course</a>
+        <a class="btn btn-primary" href="{% url 'course_add' pk=permit.pk %}">Add course</a>
     </div>
-    <!-- <i class="material-icons">add</i>  -->
     {% endif %}
 </div>
 {% endblock %}

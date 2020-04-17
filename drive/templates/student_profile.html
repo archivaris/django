@@ -57,16 +57,15 @@
                         <h3>{{ student.first_name }} {{ student.last_name }}</h3>
                         <small class="faded lead">
                             {{ student.get_level_display }} &mdash;
-                            <a class="text-primary" href="{% url 'program_single' pk=student.program.pk %}">{{
-                                student.program }}</a>
+                            <a class="text-primary" href="{% url 'permit_single' pk=student.permit.pk %}">{{ student.permit }}</a>
                         </small>
                         <hr/>
-                        <div><span class="sm-label label text-primary"><i class="fas fa-map-marker"></i></span> {{
-                            student.city }}, {{ student.country }}
+                        <div><span class="sm-label label text-primary"><i class="fas fa-map-marker"></i></span>
+                            {{ student.city }}, {{ student.country }}
                         </div>
                         <br/>
-                        <div><span class="sm-label label text-primary"><i class="fas fa-envelope"></i></span> {{
-                            student.email }}
+                        <div><span class="sm-label label text-primary"><i class="fas fa-envelope"></i></span>
+                            {{ student.email }}
                         </div>
                         <hr/>
                         <h5>Enrolled Courses</h5>
@@ -79,8 +78,8 @@
                             </div>
                             {% endif %}
                             {% for course in student.course.all %}
-                            <a class="label" href="{% url 'course_detail' pk=course.pk %}" title="{{ course.summary }}">{{
-                                course }}</a>
+                            <a class="label" href="{% url 'course_detail' pk=course.pk %}" title="{{ course.summary }}">
+                                {{ course }}</a>
                             {% endfor %}
                             {% if student.course.all|length > 8 %}
                         </div>

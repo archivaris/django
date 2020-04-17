@@ -22,10 +22,10 @@
                 <div class="no-padding col-md-1 col-sm-4">
                     <header>
                         <nav>
-                            {% url 'home' as hom %} {% url 'students' as acc %} {% url 'programs' as prog %} {% url 'login' as log %} {% url 'student_detail' pk=user.student.pk as sd %}
+                            {% url 'home' as hom %} {% url 'students' as acc %} {% url 'permits' as prog %} {% url 'login' as log %} {% url 'student_detail' pk=user.student.pk as sd %}
                             <a href="{% url 'home' %}" {% if request.path == hom %} class="active" {% endif %}>Home</a>
                             <a href="{% url 'students' %}" {% if request.path == acc %} class="active" {% endif %}>Accounts</a>
-                            <a href="{% url 'programs' %}" {% if request.path == prog %} class="active" {% endif %}>Courses</a>
+                            <a href="{% url 'permits' %}" {% if request.path == prog %} class="active" {% endif %}>Courses</a>
                             <div>
                                 {% if not user.is_authenticated %}
                                 <a href="{% url 'login' %}" {% if request.path == log %} class="active" {% endif %}>Login</a> {% else %}

@@ -7,29 +7,29 @@
         <div class="col-md-12 col-xs-12">
             <div class="no-shade card-box">
                 <form class="float-right form-inline" method="get">
-                    <select class="form-control" name="afati" style="min-width: 300px; margin-right: 10px">
+                    <select class="form-control" name="deadline" style="min-width: 300px; margin-right: 10px">
                         <option value="-1">Select deadline</option>
-                        {% for a in afatetAll %}
-                        <option value="{{ a.pk }}">{{ a.emri }}</option>
+                        {% for a in deadlineAll %}
+                        <option value="{{ a.pk }}">{{ a.name }}</option>
                         {% endfor %}
                     </select>
-                    <input class="btn btn-primary" name="filterProvimet" type="submit" value="Filter">
+                    <input class="btn btn-primary" name="filterPayment" type="submit" value="Filter">
                 </form>
             </div>
             <div class="card-box">
                 <h6>Payments done</h6>
-                {% if provimet %}
+                {% if payment %}
                 <table>
                     <thead>
                     <tr>
-                        <th style="max-width: 50px">Tipi</th>
+                        <th style="max-width: 50px">Type</th>
                         <th>Lesson</th>
                         <th>Instructor</th>
                         <th>Amount</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for p in provimet %}
+                    {% for p in payment %}
                     <tr>
                         <td style="max-width: 50px"><b>{{ p.course.get_type }}</b></td>
                         <td>{{ p.course.name }}</td>
@@ -38,8 +38,8 @@
                             {{ t }}<br>
                             {% endfor %}
                         </td>
-                        <td>{% if p.course.pk|get_grade:request.user.pk >= 5 %}{{ p.course.pk|get_grade:request.user.pk
-                            }}{% else %}&mdash;{% endif %}
+                        <td>{% if p.course.pk|get_grade:request.user.pk >= 5 %}{{ p.course.pk|get_grade:request.user.pk }}
+                            {% else %}&mdash;{% endif %}
                         </td>
                         <td class="text-right" style="min-width: 140px; max-width: 140px">
                             {% if p.course.pk|get_grade:request.user.pk >= 0 %}
@@ -47,7 +47,6 @@
                             {% endif %}
                             {% if p.course.pk|get_grade:request.user.pk >= 5 %}
                             <a class="no-float btn-sm btn btn-success" href="#">Payed</a>
-
                             {% endif %}
                         </td>
                     </tr>
@@ -59,9 +58,6 @@
                 <p class="text-center lead text-danger">No payments done</p><br>
                 {% endif %}
             </div>
-<!--            <div class="empty-box">-->
-<!--                <a class="btn btn-primary" href="{% url 'provimet' %}">Pay now</a>-->
-<!--            </div>-->
         </div>
     </div>
 </div>

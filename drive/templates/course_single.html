@@ -5,9 +5,9 @@
             <div class="no-shade card-box">
                 <h4>{{ course }}</h4> {% if course.summary %}
                 <p>{{ course.summary }}</p>
-                {% endif %} {% if teachers %}
-                <h6>Teacher(s)</h6> {% for teacher in teachers %}
-                <a href="{% url 'student_detail' pk=teacher.pk%}">{{ teacher.first_name }} {{ teacher.last_name }}</a>
+                {% endif %} {% if instructors %}
+                <h6>Instructor(s)</h6> {% for instructor in instructors %}
+                <a href="{% url 'student_detail' pk=instructor.pk%}">{{ instructor.first_name }} {{ instructor.last_name }}</a>
                 <br/> {% endfor %} {% endif %}
             </div>
             {% load static %}

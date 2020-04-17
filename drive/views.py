@@ -338,7 +338,7 @@ def confirm_select_instructor(request, course_id, student_id):
     return redirect('add_instructor', course_id=course_id)
 
 
-def confirm_delete_teacher(request, course_id, student_id):
+def confirm_delete_instructor(request, course_id, student_id):
     student = Student.objects.get(pk=student_id)
     course = Course.objects.get(pk=course_id)
 

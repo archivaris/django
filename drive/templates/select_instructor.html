@@ -23,7 +23,7 @@
                             {{ student.first_name }} {{ student.last_name }}<br/>
                         </td>
                         <td class="text-right"><small><a class="btn btn-sm btn-third"
-                                                         href="{% url 'confirm_teacher' course_id=course_id student_id=student.pk %}">Select</a></small>
+                                                         href="{% url 'confirm_instructor' course_id=course_id student_id=student.pk %}">Select</a></small>
                         </td>
                     </tr>
                     {% endfor %}
@@ -56,16 +56,16 @@
                 {% if teachers %}
                 <table>
                     <tbody>
-                    {% for teacher in teachers %}
+                    {% for instructor in instructors %}
                     <tr>
                         <td>
-                            {{ teacher.first_name }} {{ teacher.last_name }}<br/>
+                            {{ instructor.first_name }} {{ instructor.last_name }}<br/>
                         </td>
                         <td class="text-right">
                                 <span class="with-popup">
                                     <div class="popup p-delete">
                                         <p>Are you sure you want to remove this teacher?</p>
-                                        <a href="{% url 'delete_teacher' course_id=course_id student_id=teacher.pk %}">Remove</a>
+                                        <a href="{% url 'delete_instructor' course_id=course_id student_id=instructor.pk %}">Remove</a>
                                     </div><small><a class="btn btn-sm btn-danger">Remove</a></small>
                                 </span>
                         </td>

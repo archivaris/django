@@ -4,40 +4,12 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {% if news %}
-        <div class="col-md-12 col-xs-12">
-            <div class="card-box">
-                <h6>Latest news</h6><br/>
-                <div class="row">
-                    {% load static %}
-                    {% for post in news %}
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        {% if post.picture %}
-                        <div class="post-img">
-                            <img src="{% static 'uploads/' %}{{ post.picture }}" />
-                        </div>
-                        {% endif %}
-                        <h5><a href="{% url 'post_single' pk=post.pk %}">{{ post.title }}</a></h5>
-                        <p>{{ post.get_content|safe }}</p>
-                    </div>
-                    {% endfor %}
-                    <div class="col-md-12">
-                        <br/>
-                        <a class="with-icon btn btn-third" href="{% url 'post_list' %}"><i class="material-icons">chevron_right</i> View all posts</a>
-                        {% if user.is_authenticated and user.is_superuser %}
-                        <a class="with-icon btn btn-third" href="{% url 'post_add' %}"><i class="material-icons">add</i>Add new</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="card-box">
                 <h6>Programs</h6>
                 <ul class="list-unstyled">
-                    {% for program in programs %}
-                    <a href="{% url 'program_single' pk=program.pk %}"><li>{{ program.name }}</li></a>
+                    {% for permit in permits %}
+                    <a href="{% url 'permit_single' pk=permit.pk %}"><li>{{ permit.name }}</li></a>
                     {% endfor %}
                 </ul>
             </div>
@@ -45,7 +17,7 @@
         </div>
         <div class="col-md-12 col-xs-12">
             <div class="empty-box">
-                <a href="{% url 'provimet_paraqitura' %}" class="btn btn-primary">Payments</a>
+                <a href="{% url 'current_payments' %}" class="btn btn-primary">Payments</a>
             </div>
         </div>
     </div>

@@ -1,15 +1,21 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.core.paginator import Paginator
-from django.db.models import Avg, Max, Min
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
+from datetime import datetime
 from django.shortcuts import render
+from django.http import HttpRequest, JsonResponse, HttpResponse
+from django.shortcuts import redirect
+from .models import Course, Program, User, Student,  Grade, afatet_provimeve, Provimet
+from django.contrib.auth.models import User, Group
+from elearning import settings
+from django.db.models import Sum, Avg, Max, Min, Count
+from .forms import UpdateProfile, SelectTeachersForm, GradeStudentsForm, CourseAddForm, ProgramForm, AfatetForm
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import get_object_or_404
+from django.forms import inlineformset_factory
+from django.forms import modelformset_factory
+from django.core.paginator import Paginator
+from django import forms
 from django.template.defaulttags import register
 
-from .forms import UpdateProfile, CourseAddForm, ProgramForm, AfatetForm
-from .models import Course, Program, Student, Grade, afatet_provimeve, Provimet
+
 
 max_paraqit = 3
 
@@ -449,30 +455,30 @@ def delete_afat(request, pk):
     return redirect('administrator', afat_extra=0)
 
 
-# def paraqit_provimet(request):
-#     provimetList = list()
-#     courses = None
-#     provimet = None
-#     afatet = afatet_provimeve.objects.filter(aktiv=True)
-#     afatetAll = afatet_provimeve.objects.all()
-#     program = request.user.student.program
-#
-#     if request.method == 'GET':
-#         if request.GET.get('filter'):
-#             year = int(request.GET.get('year'))
-#             semester = int(request.GET.get('semester'))
-#             if int(request.GET.get('afati')) > -1:
-#                 afati = get_object_or_404(afatet_provimeve, pk=int(request.GET.get('afati')))
-#                 provimetList = list(
-#                     Provimet.objects.values_list('course', flat=True).filter(student=request.user, afati=afati))
-#
-#             courses = Course.objects.filter(program=program, year=year, semester=semester).exclude(
-#                 pk__in=provimetList).annotate(hera=Count('pk'))
-#
-#     return render(
-#         request, 'paraqit_provimet.html',
-#         {'program': program, 'courses': courses, 'provimet': provimet, 'afatet': afatet, 'afatetAll': afatetAll},
-#     )
+def paraqit_provimet(request):
+    provimetList = list()
+    courses = None
+    provimet = None
+    afatet = afatet_provimeve.objects.filter(aktiv=True)
+    afatetAll = afatet_provimeve.objects.all()
+    program = request.user.student.program
+
+    if request.method == 'GET':
+        if request.GET.get('filter'):
+            year = int(request.GET.get('year'))
+            semester = int(request.GET.get('semester'))
+            if int(request.GET.get('afati')) > -1:
+                afati = get_object_or_404(afatet_provimeve, pk=int(request.GET.get('afati')))
+                provimetList = list(
+                    Provimet.objects.values_list('course', flat=True).filter(student=request.user, afati=afati))
+
+            courses = Course.objects.filter(program=program, year=year, semester=semester).exclude(
+                pk__in=provimetList).annotate(hera=Count('pk'))
+
+    return render(
+        request, 'paraqit_provimet.html',
+        {'program': program, 'courses': courses, 'provimet': provimet, 'afatet': afatet, 'afatetAll': afatetAll},
+    )
 
 
 def provimet_paraqitura(request):
@@ -492,14 +498,14 @@ def provimet_paraqitura(request):
         request, 'provimet_paraqitura.html', {'program': program, 'provimet': provimet, 'afatetAll': afatetAll},
     )
 
-# def paraqit_provimin(request, c_pk, a_pk):
-#     course = Course.objects.get(pk=c_pk)
-#     provimet = Provimet()
-#     provimet.course = course
-#     provimet.student = request.user
-#     provimet.afati = afatet_provimeve.objects.get(pk=a_pk)
-#     provimet.time = datetime.now()
-#     provimet.refuzuar = False
-#     provimet.save()
-#
-#     return redirect('provimet')
+def paraqit_provimin(request, c_pk, a_pk):
+    course = Course.objects.get(pk=c_pk)
+    provimet = Provimet()
+    provimet.course = course
+    provimet.student = request.user
+    provimet.afati = afatet_provimeve.objects.get(pk=a_pk)
+    provimet.time = datetime.now()
+    provimet.refuzuar = False
+    provimet.save()
+
+    return redirect('provimet')

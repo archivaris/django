@@ -16,19 +16,6 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="card-box">
-                <h6>Recently logged users</h6>
-                <ul class="list-unstyled">
-                    {% for user in users %}
-                    <a href="{% url 'student_detail' pk=user.student.pk %}">
-                        <li>{{ user.student.first_name }} {{ user.student.last_name }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
         <div class="col-md-12 col-xs-12">
             <div class="empty-box">
                 <a class="btn btn-primary" href="{% url 'provimet_paraqitura' %}">Payments done</a>

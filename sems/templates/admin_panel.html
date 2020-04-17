@@ -24,8 +24,8 @@
                             <td class="text-center" style="max-width: 40px">{{ form.aktiv }}</td>
                             <td>{{ form.emri }}</td>
                             <td class="text-center">{% if form.id.value %}<small><a class="text-danger"
-                                                                                    href="{% url 'delete_afat' pk=form.id.value %}">Delete</a></small>{%
-                                endif %}
+                                                                                    href="{% url 'delete_afat' pk=form.id.value %}">Delete</a></small>
+                                {% endif %}
                             </td>
                         </tr>
                         {% endfor %}
